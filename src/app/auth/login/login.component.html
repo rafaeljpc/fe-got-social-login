@@ -1,0 +1,30 @@
+<div class="jumbotron bg-transparent text-center">
+  <h1>GoT House and People</h1>
+  <div class="card" *ngIf="!user">
+    <h6 class="card-header">Login</h6>
+    <div class="card-block">
+      <h4 class="card-title">Not signed in</h4>
+    </div>
+    <div class="card-block">
+      <div class="card-text">Sign in with</div>
+      <button class="btn loginBtn loginBtn--google" (click)="signInWithGoogle()">Login with Google</button>
+    </div>
+    <div class="card-block">
+      <form [formGroup]="loginForm" (submit)="signInWithUserAndPassword()">
+        <input 
+          #userNameInput 
+          formControlName="userName" 
+          class="form-control" 
+          placeholder="user name or email"
+        >
+        <input 
+          #passwordInput 
+          formControlName="password" 
+          type="password"
+          class="form-control" 
+          placeholder="password" 
+        >
+      </form>
+    </div>
+  </div>
+</div>
